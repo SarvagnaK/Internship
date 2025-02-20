@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarvagna Khatri - Portfolio</title>
+    <style>
+      /* General Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: linear-gradient(to bottom, #121212, #1e1e1e);
+        color: #fff;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      /* Navigation Bar */
+      nav {
+        background: rgba(30, 30, 30, 0.9);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        width: 100%;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        z-index: 100;
+        transition: 0.3s;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 0 20px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 15px;
+        transition: 0.3s;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+      }
+      nav ul li a:hover {
+        background-color: #ff4c60;
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #ff4c60;
+        left: 0;
+        bottom: -5px;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      nav ul li a:hover::after {
+        transform: scaleX(1);
+      }
+
+      /* Home Section */
+      .home {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+        padding: 100px 10%;
+        background: linear-gradient(to right, #1e1e1e, #333);
+        animation: fadeIn 1.2s ease-in-out;
+      }
+
+      .home .intro h1 {
+        font-size: 55px;
+        color: #ff4c60;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      .home .intro p {
+        font-size: 20px;
+        opacity: 0;
+        max-width: 500px;
+        line-height: 1.6;
+        animation: fadeInUp 1.2s ease-out forwards;
+      }
+
+      .profile-pic img {
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        border: 5px solid white;
+        box-shadow: 0 0 20px rgba(255, 76, 96, 0.7);
+      }
+
+      /* Sections */
+      .section {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 10%;
+        min-height: 100vh;
+        background: #1e1e1e;
+        animation: fadeIn 0.8s ease-in-out;
+      }
+
+      .section h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        margin-top: 10px;
+        color: #ff4c60;
+      }
+
+      /* Projects */
+      .project-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      .project {
+        background: #252525;
+        padding: 20px;
+        margin: 15px;
+        width: 300px;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+      }
+
+      .project:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 20px rgba(255, 76, 96, 0.5);
+      }
+
+      .project h3 {
+        color: #ff4c60;
+      }
+
+      /* Skills */
+
+      .skills-achievements-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: auto;
+    background: #252525;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 76, 96, 0.3);
+}
+
+.skills, .achievements {
+    flex: 1;
+    min-width: 300px;
+}
+
+.skills h3, .achievements h3 {
+    color: #ff4c60;
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.skills ul, .achievements ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills ul li, .achievements ul li {
+    font-size: 16px;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.skills ul li::before, .achievements ul li::before {
+    content: "•";
+    color: #ff4c60;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+
+
+     
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #181818;
+      }
+
+      /* Back to Top */
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #ff4c60;
+        color: white;
+        padding: 12px 15px;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        display: none;
+        transition: 1s;
+      }
+
+      .back-to-top:hover {
+        background: #e03e50;
+      }
+      .contact-details {
+        display: flex;
+        height: 200px;
+        width: 300px;
+        flex-direction: column;
+        margin-left: 450px;
+        gap: 20px;
+      }
+      .contact-section {
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+      }
+
+      .contact-details p {
+        font-size: 18px;
+        margin: 5px 0;
+      }
+
+      .contact-details a {
+        color: #ff4c60;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .contact-details a:hover {
+        color: #e03e50;
+        text-decoration: underline;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        /* margin-top: 200px; */
+        margin-right: -26px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 14px;
+        border-radius: 8px;
+        border: none;
+        background: #252525;
+        color: white;
+        font-size: 16px;
+        transition: 0.3s;
+        outline: none;
+        box-shadow: 0px 4px 10px rgba(255, 76, 96, 0.2);
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        background: #333;
+        box-shadow: 0px 4px 15px rgba(255, 76, 96, 0.5);
+      }
+
+      .contact-form textarea {
+        resize: none;
+        height: 120px;
+      }
+
+      .contact-form button {
+        width: 100%;
+        background: #ff4c60;
+        color: white;
+        padding: 14px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 8px;
+        transition: 0.3s;
+        box-shadow: 0px 4px 10px rgba(255, 76, 96, 0.3);
+      }
+
+      .contact-form button:hover {
+        background: #e03e50;
+        transform: scale(1.05);
+      }
+
+      .social-icons {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .social-icons a {
+        color: white;
+        font-size: 24px;
+        transition: 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: #ff4c60;
+      }
+      /* Resume Download */
+      .resume-download {
+        margin-top: 20px;
+      }
+      .resume-download a {
+        background: #ff4c60;
+        color: white;
+        padding: 12px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        display: inline-block;
+        transition: 0.3s;
+      }
+      .resume-download a:hover {
+        background: #861824;
+      }
+      /* about */
+      #about {
+        background: linear-gradient(to right, #1e1e1e, #2a2a2a);
+        padding: 80px 10%;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255, 76, 96, 0.5);
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      #about h2 {
+        font-size: 40px;
+        color: #ff4c60;
+        margin-bottom: 20px;
+      }
+
+      #about p {
+        font-size: 18px;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #e0e0e0;
+      }
+
+      #about p strong {
+        color: #ff4c60;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Projects */
+      .project-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 200px;
+
+    margin-top: 20px;
+}
+
+.project {
+    background: #252525;
+    padding: 15px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 76, 96, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(255, 76, 96, 0.5);
+}
+
+.project h3 {
+    color: #ff4c60;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 16px;
+    color: #e0e0e0;
+    margin-bottom: 8px;
+}
+
+.project strong {
+    color: #ff4c60;
+}
+
+
+/* resume button */
+.resume-button {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+
+.resume-button a {
+    background: #ff4c60;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    display: inline-block;
+    transition: 0.3s;
+    box-shadow: 0px 4px 10px rgba(255, 76, 96, 0.3);
+}
+
+.resume-button a:hover {
+    background: #e03e50;
+    transform: scale(1.05);
+}
+
+
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Sections -->
+    <div id="home" class="home">
+      <div class="intro">
+        <h1>Hey, I'm Sarvagna 👋</h1>
+        <p>Frontend Developer | Problem Solver | Passionate Coder</p>
+
+      </div>
+      <div class="profile-pic">
+        <img src="profile.jpg" alt="Profile Picture" />
+      </div>
+      <div class="resume-button">
+        <a href="202103029_Sarvagna_Khatri.pdf" download>Download Resume</a>
+    </div>
+    </div>
+
+    <div id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        I am Sarvagna Khatri, a passionate B.Tech student specializing in
+        Mathematics and Computing at DA-IICT. I have a strong interest in
+        Competitive Programming and Data Structures & Algorithms (DSA). 
+        <br><br>
+        <!-- <hr> -->
+        I thrive
+        on solving complex problems and have a keen interest in software
+        development. I have solved over 700+ problems across platforms like
+        LeetCode, GFG, Codeforces, and CodeChef. My expertise lies in C, C++,
+        Python, JavaScript, HTML, and CSS. Apart from coding, I enjoy exploring
+        new food places, watching web series, and playing cricket.
+      </p>
+    </div>
+    <div id="projects" class="section"><h2>My Projects</h2>
+<div class="project-container">
+    <div class="project">
+        <h3>Mini Linux Shell</h3>
+        <p><strong>(OS Project | Oct 2022 - Nov 2022)</strong></p>
+        <p>Implemented a Mini Linux Shell in C with a simple file system. Supports md, rd, ls, cd, stats, etc., for directories and create, remove, display, etc., for files.</p>
+        <p><strong>Guide:</strong> Prof. Sanjay Srivastava</p>
+    </div>
+    <div class="project">
+        <h3>Page Rank in Parallel Processing</h3>
+        <p><strong>(Big Data Project | Nov 2023 - Dec 2023)</strong></p>
+        <p>Utilized Python frameworks like MapReduce and Spark for scalable computations. Implemented and analyzed the PageRank algorithm using Markov chains.</p>
+        <p><strong>Guide:</strong> Prof. P.M. Jat</p>
+    </div>
+    <div class="project">
+        <h3>Fl-Ai-ppy Bird</h3>
+        <p><strong>(Reinforcement Learning | May 2024 - June 2024)</strong></p>
+        <p>Developed an AI bot to play Flappy Bird using Q-learning. Self-trained using Reinforcement Learning (RL) concepts of rewards and punishments.</p>
+        <p><strong>Guide:</strong> Prof. Abhishek Jindal</p>
+    </div>
+</div>
+
+    </div>
+    <div id="skills" class="section">
+        <h2>Skills & Achievements</h2>
+        <div class="skills-achievements-container">
+            <div class="skills">
+                <h3>Skills</h3>
+                <ul>
+                    <li><strong>Programming Languages:</strong> C, C++, Python, JavaScript, HTML, CSS</li>
+                    <li><strong>Technical Electives:</strong> Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems</li>
+                    <li><strong>Areas of Interest:</strong> Competitive Programming, DSA, Software Development</li>
+                </ul>
+            </div>
+            <div class="achievements">
+                <h3>Achievements</h3>
+                <ul>
+                    <li>Specialist on Codeforces (Max rating: <strong>1453</strong>)</li>
+                    <li>CodeChef 3-Star (Max rating: <strong>1611</strong>)</li>
+                    <li>Solved <strong>700+</strong> coding problems across LeetCode, GFG, Codeforces, and CodeChef</li>
+                    <li>Awarded for <strong>Best Drama Act</strong> in Rangmanch at DA-IICT</li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="contact" class="section">
+      <h2 id="cntct">Contact</h2>
+      <div class="contact-details">
+        <p>
+          Email:
+          <a href="mailto:khatri.sarvagna@gmail.com"
+            >khatri.sarvagna@gmail.com</a>
+        </p>
+        <p>Phone: <a href="tel:+918888888888">88888-88888</a></p>
+
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div class="social-icons">
+          <a href="https://x.com/KhatriSarvagna" class="fa fa-twitter"></a>
+          <a
+            href="https://www.instagram.com/sarvagnakhatri/"
+            class="fa fa-instagram"
+          ></a>
+          <a href="https://github.com/SarvagnaK/" class="fa fa-github"></a>
+        </div>
+      </div>
+    </div>
+
+    <footer><p>© 2025 Sarvagna Khatri. All Rights Reserved.</p></footer>
+
+    <script>
+      function showSection(id) {
+        document
+          .querySelectorAll(".home, .section")
+          .forEach((el) => (el.style.display = "none"));
+        document.getElementById(id).style.display = "flex";
+      }
+    </script>
+  </body>
+</html>
