@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 concepts</title>
+</head>
+<body>
+    <script>
+
+        function testScope() {
+    let x = 10;
+    if (true) {
+        let x = 20;  
+        console.log(`Inner x: ${x}`); // 20
+    }
+    console.log(`Outer x: ${x}`); // 10
+}
+testScope();
+
+const PI = 3.14159;
+console.log(`Value of PI: ${PI}`);
+
+
+
+// ------------------  arrow function ------------------ 
+
+function add(...args)
+{
+    
+    let sum=0;
+    args.forEach(element => {
+        sum+=element;
+    });
+    return sum;
+}
+console.log(add(1,2,3));
+
+
+
+
+// ------------------ template literals -------------------
+const name="sarvagna";
+const age=20;
+const company='Eclat';
+console.log(`User name: ${name}, age is ${age}, company name: ${company}`);
+
+
+    </script>
+</body>
+</html>

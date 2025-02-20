@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+    <script>
+        async function getData() {
+            try{
+                console.log("fetching data.....");
+                let response=await fetchData();
+                console.log(response);
+                
+            }
+            catch(error)
+            {
+                console.log("error",error);
+                
+            }
+        }
+        getData();
+    </script>
+</body>
+</html>

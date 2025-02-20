@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Generator function</h2>
+    <button id="genbtn">get next</button>
+    <script>
+
+      function* iterate(start, end, stp = 1) { //by default step size is 1
+        for (let i = start; i <= end; i += stp) {
+          yield i;
+        }
+      }
+      const btn = document.getElementById("genbtn");
+      let one = iterate(1, 10, 2);
+
+      btn.addEventListener("click", () => {
+        btn.innerText = one.next().value;
+        // one=one.next();
+      });
+    </script>
+  </body>
+</html>
