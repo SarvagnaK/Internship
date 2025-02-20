@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #re {
+            text-align: center;
+            font-size: larger;
+            position: relative;
+            top: 20px; 
+            z-index: 1;
+        }
+        p {
+            background-color: beige;    
+            text-align: center;
+            position: relative;
+            left: 20px; /* Moves the paragraph slightly to the right */
+        }
+        span {
+            background-color: aqua;
+        }
+        ol {
+            
+            width: fit-content;
+        }
+        li {
+            background-color: aquamarine;
+            margin: 5px 0;
+            padding: 5px;
+            text-align: center;
+        }
+        .absolute-box {
+            position: absolute;
+            top: 50px; /* Positions it at the top of #re div */
+            left: 50%; /* Centers horizontally */
+            transform: translateX(-50%); /* Adjusts for exact centering */
+            background-color: lightcoral;
+            padding: 10px;
+            border: 1px solid darkred;
+            color: white;
+            transition: visibility 0.3s, opacity 0.3s ease;
+            z-index: 2; /* Ensures it appears above other content */
+        }
+        .absolute-box:hover{
+            /* display: ;    */
+            visibility: hidden;
+            opacity: 0;
+        }
+        .fixed-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: lightblue;
+            padding: 10px;
+            border: 1px solid darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="re"> 
+        <h1>THIS IS THE TIME!!</h1>
+    </div>
+
+    <p>
+        Lorem ipsum dolor, <span>sit amet consectetur adipisicing elit</span>. 
+        <br>Nostrum dolores, itaque excepturi quisquam adipisci dolorem soluta. 
+        <hr>Voluptatum animi obcaecati molestiae nihil corporis reprehenderit error sequi et, asperiores omnis illo aspernatur?
+    </p>
+
+    <ol>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+        <li>Juice</li>
+    </ol>
+
+    <div class="absolute-box">
+        <b> HIDDEN MESSAGE </b> HOVER HERE TO KNOWW
+    </div>
+
+    <div class="fixed-box">
+        This box uses <b>fixed positioning</b>. It remains fixed to the viewport.
+    </div>
+</body>
+</html>

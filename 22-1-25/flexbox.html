@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEB Page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #fbf7f7;
+
+        font-family: "Poppins", sans-serif;
+        margin: 50px 50px 0 50px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        min-height: 95vh;
+      }
+      #container{
+        flex: 0.9;
+      
+      }
+      .tile-image {
+        
+        margin-right: 50px;
+        float: left;
+        max-width: 300px;
+        height: 200px;
+      }
+
+   
+      footer{
+        text-align: right;
+        color: midnightblue;
+      }
+.left_card{
+  width: 45%;
+ /* max-width: 60%; */
+
+
+  float: left;
+}
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  gap:50px;
+}
+
+.right_card{
+  width: 45%;
+  /* max-width: 60%; */
+
+  float: right;
+}
+
+       #creat{
+        color: midnightblue;
+       }
+      footer{
+        text-align: right;
+        color: midnightblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <img class="logo" src="assets/images/logo.png" alt="this is our logo" />
+
+      <h1>We are a <span id="creat">Creative</span> website designers</h1>
+
+      <div class="content">
+        <div class="left_card">
+          <img class="tile-image" src="assets/images/beautiful.jpg" />
+          <h2 class="card_title">Beauty</h2>
+          <p id="hh">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur
+            perspiciatis beatae quasi aliquid tempore est cum repellendus facere
+          </p>
+        </div>
+        <div class="right_card">
+          <img src="assets/images/construction.jpg" class="tile-image" />
+          <h2 class="card_title">Construction</h2>
+          <p id="gg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. A iure
+            nulla obcaecati veritatis quasi velit aperiam laudantium officia
+            cum, fugit dicta
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer>Dream. Create. Achieve.</footer>
+  </body>
+</html>

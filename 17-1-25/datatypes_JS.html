@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datatypes,variables,operators</title>
+
+</head>
+<script>
+    //simple js code, playing with datatypes and variables
+    let name="Sarvagna";
+    const age=20;
+    let isEmployee=true;
+
+    let wlc_msg=`Hello ${name}!`;
+    let status=isEmployee ? "an Employee" : "not an Employee;"
+    console.log(wlc_msg)
+    console.log("Your age is",age);
+    console.log(`You are ${status}`)
+    console.log("The data type of the age is" ,typeof(age),"Hope u r doing well");
+
+    var a=10;
+    var b=2;
+    console.log(a*b)
+    console.log(a**b)
+
+    a=5
+    b=3
+    console.log((a/b).toFixed(3))
+
+    let board="";
+    for(let i=0;i<8;i++)
+{
+    for(let j=0;j<8;j++)
+{
+    if((i+j)%2)
+{
+    board+="#";
+}
+else {
+    
+    board+=" ";
+}
+
+
+}
+board+="\n";
+}
+console.log(board);
+    //displaying alert
+    
+    function showalert()
+    {
+    alert(`Welcome, ${name}! You are ${status}.`);
+    }
+</script>
+<body>
+    <button onclick="showalert()">click me</button>
+
+</body>
+</html>

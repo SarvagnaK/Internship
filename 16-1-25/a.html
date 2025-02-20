@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-size: 30px;
+      
+    }
+    .row {
+      /* border: 1px solid black; */
+      display: flex;
+      gap: 40px;
+      
+    }
+    .col:nth-of-type(2n):hover
+    {
+        cursor: pointer;
+        font-size: 50px;
+        background-color: aqua;
+    }
+   
+    .col {
+      border: 1px solid black;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      height: 100px;
+      width: 100px;
+    }
+    #container {
+      margin: 140px;
+      display: flex;
+      row-gap: 30px;
+      justify-content: center;
+        flex-direction: column;
+      align-items: center;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+      </div>
+
+      <div class="row">
+        <div class="col">4</div>
+        <div class="col">5</div>
+        <div class="col">6</div>
+      </div>
+
+      <div class="row">
+        <div class="col">7</div>
+        <div class="col">8</div>
+        <div class="col">9</div>
+      </div>
+    </div>
+  </body>
+</html>

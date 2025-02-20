@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <input id="input" type="text" placeholder="enter city name">
+        <button id="searchbutton">search </button>
+    </div>
+
+<div>
+    <h3 id="city-name">City name</h3>
+    <h6 id="city-time">city time</h6>
+    <p id="temp-id">temp</p>
+</div>
+    <script>
+
+        // alert('ok')
+
+const button=document.getElementById('searchbutton');
+const input=document.getElementById('input')
+
+const nae=document.getElementById('city-name');
+const time=document.getElementById('city-time');
+const temp=document.getElementById('temp-id');
+
+
+
+async function getdata(cityname) {
+    const promise=await fetch(`http://api.weatherapi.com/v1/current.json?key=1fc41a8fa2944af285f70211250301&q=${cityname}&aqi=yes`)
+
+
+    return await promise.json();
+}
+button.addEventListener("click",async ()=>{
+    // console.log(input.value);   
+
+    const value=input.value;
+    const result=await getdata(value);
+    console.log(result)
+    nae.innerText= `${result.location.name}, ${result.location.region} - ${result.location.country}`
+time.innerText=`${result.location.localtime}`
+temp.innerText=`${result.current.temp_c}`
+
+})
+    </script>
+</body>
+</html>

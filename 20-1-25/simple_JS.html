@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <nav class="block">
+        <p class="paragraph">welcome to my website</p>
+    </nav>
+    <div class="block">
+        <h4>Hey there my name is <span id="name"> Sarvagna </span></h4>
+        <p class="paragraph">here is a sample code</p>
+        <pre>console.log('Hey')</pre>
+    </div>
+ 
+    <div id="container">
+        <input type="text" id="username">
+    <button id="clik">Click me</button>
+</div>
+
+    <script>
+const button=document.getElementById('clik');
+const uname=document.getElementById('username');
+const nae=document.getElementById('name');
+
+button.addEventListener('click',()=>{
+    const val=uname.value;
+    localStorage.setItem('name',val);
+    location.reload();
+});
+
+window.addEventListener('load',()=>{
+    const val=localStorage.getItem('name');
+    nae.innerText=val;
+})
+
+
+
+
+
+ 
+        // async function getdata() {
+        //     let result=await fetch("https://jsonplaceholder.typicode.com/posts");
+        //         console.log(await result.json());
+        // }
+        // getdata();
+
+    // const container=document.getElementById("container");
+    // const butt=document.getElementById("clik");
+
+    // let count=1;
+    // butt.addEventListener('click',()=>{
+    //      const el=document.createElement('li');
+    //      el.innerText=count;
+    //      container.appendChild(el);
+    //      count++;
+    // });
+
+            // cont.innerHTML="<h1>afafa</h1>";
+
+            // const el=document.createElement("h1");
+            // el.innerText='savo'
+           
+            // el.innerText="savo";
+            // cont.appendChild(el);
+       
+
+
+
+    //     const allchildren=document.querySelector("body").children
+    //   console.log(allchildren)
+    //   for(let i=0;i<allchildren.length;i++)
+    //   {
+    //     allchildren[i].addEventListener("click",()=>{
+    //         allchildren[i].remove();
+    //     })
+    //   }
+        // const el=document.getElementById('name')
+        // el.style.textDecoration="underline"
+        // el.style.color="red"
+        
+        // console.log(el);
+        // const ele=document.querySelectorAll('#name')
+        // ele.forEach(e => {console.log(e)});
+        // ele.forEach(e=>{e.innerText="fefe"})
+
+
+        // const bdy=document.querySelector("body");
+        // bdy.innerHTML="<h1> hACKED!!</h1>"
+
+
+
+        // const name=document.querySelector("#name")
+        // name.innerText="Sarvagna Khatri"
+        // name.innerHTML="<h4>faaaf</h4>"
+
+        // const ele=document.querySelector('#name')
+        // ele.innerText="savo";
+
+        
+    </script>
+</body>
+</html>

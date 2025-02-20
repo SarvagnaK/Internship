@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff9da3, #99bbff,#d76068);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            
+            position: absolute;
+         
+            background-color: #4caf50;
+            border-radius: 10px;
+            animation: move 8s infinite, color-change 8s infinite;
+        }
+
+        @keyframes move {
+          0% {
+                top: 30px;
+                left: 30px;
+            }
+            25% {
+                top: 30px;
+                left: calc(100vw - 130px);
+            }
+            50% {
+                top: calc(100vh - 130px);
+                left: calc(100vw - 130px);
+            }
+            75% {
+                top: calc(100vh - 130px);
+                left: 30px;
+            }
+            100% {
+                top: 30px;
+                left: 30px;
+            }
+        }
+
+        @keyframes color-change {
+            0% {
+                background-color: #000000;
+            }
+            25% {
+                background-color: #ff5722;
+            }
+            50% {
+                background-color: #f2ff00;
+            }
+            75% {
+                background-color: #FFC107;
+            }
+            100% {
+                background-color: #000000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

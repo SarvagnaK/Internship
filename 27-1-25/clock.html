@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="time"></h1>
+    <button id="btn">Stop time</button>
+    <button id="start">start time</button>
+    <script>
+
+const btn=document.getElementById('btn')
+const start=document.getElementById('start')
+function showtime()
+{
+    const currtime=new Date();
+    const time=`${currtime.getHours()}:${currtime.getMinutes()}:${currtime.getSeconds()}`;
+    document.getElementById('time').innerText=time;
+}
+let interval;
+
+function startclk()
+{
+    if(!interval)
+    {
+        interval=setInterval(showtime,1000)
+    }
+}
+function stopclk()
+{
+    clearInterval(interval);
+    
+    interval=null;
+}
+showtime();
+startclk();
+btn.addEventListener('click',(stopclk));
+start.addEventListener('click',(startclk));
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .container
+    {
+        /* border: 1px solid black; */
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: space-around;
+        /* padding: 20px; */
+        margin: 100px;
+        gap: 20px;
+
+
+    }
+    #box{
+       width:200px;
+       height:100px;
+       border: 2px solid black;
+       align-content: center;
+       background-color: rgb(254, 3, 3);
+       text-align: center;
+       
+    }
+    #box:nth-of-type(2n+1)
+    {
+        background-color: gold;
+    }
+    #box:nth-of-type(4)
+    {
+        transform: translateY(50px);
+        text-align: center;
+        font-size:50px;
+    }
+    #box:nth-of-type(5)
+    {
+        transform: translateY(50px);
+    }
+    #box:nth-of-type(6)
+    {
+        transform: translateY(50px);
+        font-size: 50px;
+    }
+    #box:nth-last-child(-n+3)
+    {
+        
+        transform: translateY(50px);
+    }
+    #box:nth-last-child(2)
+    {
+        font-size: 50px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div id="box">1</div>
+        <div id="box">2</div>
+        <div id="box">3</div>
+        <div id="box">4</div>
+        <div id="box">5</div>
+        <div id="box">6</div>
+        <div id="box">7</div>
+        <div id="box">8</div>
+        <div id="box">9</div>
+        <div id="box">10</div>
+        <div id="box">11</div>
+        <div id="box">12</div>
+    </div>
+ </body>
+</html>

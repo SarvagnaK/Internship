@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: antiquewhite;
+    }
+    #d1{
+        margin-left: 30px;
+    }
+    #d2{
+        margin-left: 50px;
+    }
+</style>
+<body>
+<h1>accesing elements by tag name</h1>
+
+<p>some outter text</p>
+<p>some outter text</p>
+
+<div id="d1">
+    <p>some text of div1</p>
+    <p>some text of div1</p>
+    <p>some text of div1</p>
+
+    <div id="d2">
+    <p>some text of div2</p>
+    <p>some text of div2</p>
+
+    </div>
+
+</div>
+<p>some text of out</p>
+<p>some text of out</p>
+
+<button onclick="getallpara()">show all p elements</button>
+<br> <br>
+<button onclick="getallofdiv1()">show all p of div1</button>
+<br> <br>
+<button onclick="getallofdiv2()">show all p of div2</button>
+
+
+    <h1>Document Fragment</h1>
+
+
+<ul id="ul">
+
+</ul>
+
+
+
+
+<script>
+function getallpara()
+{
+const allp=document.getElementsByTagName("p");
+const num=allp.length;
+alert(`There are ${num} paras`);
+}
+function getallofdiv1()
+{
+    const d1=document.getElementById('d1');  // accessed using element id
+    const allp=d1.getElementsByTagName("p");  // accessed using tag
+    const num=allp.length; 
+    alert(`There are ${num} paras in div1`);
+}
+function getallofdiv2()
+{
+    const d2=document.getElementsById('d2');
+    const allp=d2.getElementsByTagName('p');
+    const num=allp.length;
+    alert(`There are ${num} paras in div2`);
+}
+
+const ele=document.getElementById('ul');
+
+const fragment=document.createDocumentFragment();
+const names=["ankit bhaiya","savo","mehul","tirth"];
+
+names.forEach((name) =>{
+    const li=document.createElement("li");
+    li.innerText=name;
+    fragment.appendChild(li);
+})
+ele.appendChild(fragment);
+
+
+
+
+
+
+
+
+</script>
+</body>
+
+</html>
