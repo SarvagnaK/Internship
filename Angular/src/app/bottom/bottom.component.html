@@ -1,0 +1,26 @@
+<div class="my-container" style="margin: 10px;">
+    <div class="form-group">
+        <label for="filter">Search</label>
+        <input type="text" name="filter" [(ngModel)]="search" class="form-control">
+    </div>
+    <div class="wrapper">
+        <div class="left" style="margin: 10px;">
+            <h5>All Fruits</h5>
+
+            <div class="fruits">
+                <div class="fruit" *ngFor="let fruit of fruits">{{fruit}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="right" style="margin: 10px;">
+        <h5>Filtered fruits</h5>
+        <div class="fruits">
+            <div class="fruit" *ngFor="let fruit of fruits | impure : search">
+                {{fruit}}
+            </div>
+        </div>
+    </div>
+    <div class="btn-container">
+        <button class="btn btn-light" (click)="update()">Update</button>
+    </div>
+</div>
