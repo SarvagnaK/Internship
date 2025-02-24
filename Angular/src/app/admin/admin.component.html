@@ -4,4 +4,39 @@
     <p class="welcome-text">Hi, this is admin</p>
 
     <button class="btn btn-primary" routerLink="/pipeBasic">Navigate to pipe-basic</button>
+
+    <div class="container" style="margin: 10px;">
+        <div class="row pt-3">
+            <div class="col-3 p-3" [ngClass]="divBgColor">Div1</div>
+
+            <div class="col-3 p-3 " style="margin: 10px;" [ngClass]="isChecked==true ? 'bg-success' : 'bg-danger' ">Div 2</div>
+            <div class="col-3 row-3">
+                <input type="checkbox" [(ngModel)]="isChecked">
+            </div>
+            
+        </div>
+    <div class="row">
+        <div class="col-3">
+            <button class="btn btn-success" style="margin: 10px;" (click) ="addDiv1Color('bg-success')">Add Green</button>
+            <button class="btn btn-danger" style="margin: 10px;" (click) ="addDiv1Color('bg-danger')">Add red</button>
+    
+    
+        </div>
+    </div>
+    
+    </div>
+
+    <div class="row">
+        <div class="col-3 p-4" [ngStyle]="{'background-color':div1BgColor}">
+            Div 3
+        </div>
+
+    </div>
+    <div class="row pt4"></div>
+    <div class="col-3">
+        <button class="btn btn-danger" style="margin: 10px;" (click)="addDiv3Color('red')">Red</button>
+        <button class="btn btn-success" (click)="addDiv3Color('green')">Green</button>
+
+    </div>
+    
 </div>
