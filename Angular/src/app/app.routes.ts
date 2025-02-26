@@ -4,6 +4,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { AdminComponent } from './admin/admin.component';
 import { TopComponent } from './top/top.component';
 import { BottomComponent } from './bottom/bottom.component';
+import { GetApiComponent } from './api_integration/get-api/get-api.component';
+import { UserComponent } from './user/user.component';
 
 export const routes: Routes = [
     {
@@ -30,6 +32,15 @@ export const routes: Routes = [
     {
         path:'impure',
         component:BottomComponent
+    },
+    {
+        path:'get-api',
+        component:GetApiComponent
+    }
+    ,
+    {
+        path:'user',
+        component:UserComponent
     }
 
 ];

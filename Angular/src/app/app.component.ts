@@ -5,10 +5,12 @@ import { PipeBasicComponent } from './pipe-basic/pipe-basic.component';
 import { AdminComponent } from './admin/admin.component';
 import { TopComponent } from './top/top.component';
 import { BottomComponent } from './bottom/bottom.component';
+import { GetApiComponent } from './api_integration/get-api/get-api.component';
+import { UserComponent } from './user/user.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ReactiveFormComponent,PipeBasicComponent,RouterOutlet,RouterLink,AdminComponent,TopComponent,BottomComponent],
+  imports: [ReactiveFormComponent,PipeBasicComponent,RouterOutlet,RouterLink,AdminComponent,TopComponent,BottomComponent,GetApiComponent,UserComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

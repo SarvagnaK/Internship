@@ -1,0 +1,96 @@
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-7 table-container">
+            <div class="card">
+                <div class="card-header bg-success">
+                    <div class="row">
+                        <div class="col-6">
+                    <h4>User List</h4>
+                        </div>
+                        <div class="col-6 text-end">
+            <button class="btn btn-warning " (click)="openSidePanel()">Add new User</button>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>User Id</th>
+                                <th>User Name</th>
+                                <th>Password</th>
+                                <th>Full Name</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTable">
+                            @for( item of userList; track $index){
+                                <tr>
+                                    <td>{{$index+1}}</td>
+                                    <td>{{item.userName}}</td>
+                                    <td>{{item.password}}</td>
+                                    <td>{{item.fullName}}</td>
+                                    <td>{{item.role}}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" style="margin: 5px;">Edit</button>
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            }
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="col-5 side-panel" id="sidePanel"  >
+            <div class="card">
+                <div class="card-header bg-success">
+            <h4 id="formTitle">Add User</h4>
+                    
+                </div>
+                <div class="card-body">
+                    <form id="userForm">
+                        <div class="row">
+                        <div class="col-6">
+                            <label for="userId" class="form-label">User Id</label>
+                            <input type="number" class="form-control" id="userId" placeholder="User ID">
+                        </div>
+                        <div class="col-6">
+                            <label for="userName" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="userName" placeholder="UserName">
+                        </div>
+                        <div class="col-6">
+                            <label for="emailID" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="emailID" placeholder="Email">
+                        </div>
+                        <div class="col-6">
+                            <label for="fullName" class="form-label" >Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Full Name" >
+                        </div>
+                        <div class="col-6">
+                            <label for="role" class="form-label">Role</label>
+                            <input type="text" class="form-control" id="role" placeholder="Role">
+                    
+                        </div>
+                        <div class="col-6">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" class="form-control" placeholder="Password">
+                        </div>
+                       
+                    </div>
+                         <button style="margin: 7px;" type="submit" class="btn btn-primary">Save</button>
+                         <button type="button" class="btn btn-secondary" (click)="closeSidePanel()">Cancel</button>
+                    </form>
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+</div>
