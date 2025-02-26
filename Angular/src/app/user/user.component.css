@@ -1,0 +1,28 @@
+/* Default Layout: Side-by-Side */
+.main-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* When the table-container width is 1040px, move the form below */
+@media (max-width: 1039px) {
+    .main-container {
+        flex-wrap: wrap;
+    }
+
+    .table-container {
+        width: 100%;
+    }
+
+    .side-panel {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Enabled scrolling when content overflows */
+html, body {
+    
+    overflow-x: hidden;
+    overflow-y: auto;
+}
