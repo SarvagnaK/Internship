@@ -7,6 +7,7 @@ import { TopComponent } from './top/top.component';
 import { BottomComponent } from './bottom/bottom.component';
 import { GetApiComponent } from './api_integration/get-api/get-api.component';
 import { UserComponent } from './user/user.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
