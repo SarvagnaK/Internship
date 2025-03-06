@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ChildComponent } from './components/child/child.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,ChildComponent],
+  imports: [RouterOutlet,ChildComponent,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -14,6 +15,12 @@ export class AppComponent {
   private num:number=234;
   secondval: number=1111;
   numbers: number[]=[];
+  isVisible:boolean=true;
+
+  setVisibility()
+  {
+    this.isVisible=!this.isVisible;
+  }
   get counter()
   {
     return this.num;

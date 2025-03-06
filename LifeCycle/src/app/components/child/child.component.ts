@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component ,DoCheck,Input, OnChanges, OnInit, SimpleChange, SimpleChanges} from '@angular/core';
+import { AfterContentChecked, Component ,DoCheck,Input, OnChanges, OnDestroy, OnInit, SimpleChange, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,7 +7,7 @@ import { Component ,DoCheck,Input, OnChanges, OnInit, SimpleChange, SimpleChange
   templateUrl: './child.component.html',
   styleUrl: './child.component.css'
 })
-export class ChildComponent implements OnChanges,OnInit, DoCheck{
+export class ChildComponent implements OnChanges,OnInit, DoCheck,AfterContentChecked,OnDestroy{
 @Input() myCounter!:number;
 @Input() ndVal!:number;
 @Input() arr!: number[];
@@ -38,6 +38,17 @@ ngDoCheck(): void {
    // second time when parent component updates inputs i.e. myCounter,ndVal,arr
 
    // after that only one time is called when we click on increment/decrement
+  
+}
+
+ngAfterContentChecked(): void {
+  console.log('ng After COntent checked');
+  this.changeLog.push('ngAfter Content checked')
+  
+}
+ngOnDestroy(): void {
+  console.log('ng ON DESTROY');
+  this.changeLog.push('ng on destroy')
   
 }
 }

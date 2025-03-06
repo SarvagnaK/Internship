@@ -5,7 +5,7 @@
   <button (click)="decrement()">Decrement</button>
   <button (click)="add()">Add</button>
 
-  <app-child [myCounter]="counter"  [ndVal]="secondval" [arr]="numbers"></app-child>
+  <app-child *ngIf="isVisible" [myCounter]="counter"  [ndVal]="secondval" [arr]="numbers"></app-child>
   </div>
-
+<button (click)="setVisibility()">show/hide</button>
 </div>
