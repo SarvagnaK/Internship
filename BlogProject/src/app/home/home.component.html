@@ -1,0 +1,32 @@
+
+
+
+<div class="min-h-screen flex flex-col ">
+    
+    <!-- <section class="bg-blue-500 text-white text-center p-10">
+        <h2 class="text-4xl font-bold ">Welcome to My Blog</h2>
+        <p class="mt-2 text-lg">Explore the latest articles and trends</p>
+    </section> -->
+    
+    <!-- Blog Posts -->
+    <div *ngIf="noResultsFound" class="text-center text-gray-600 mt-10">
+        <h2 class="text-2xl font-semibold">No data available for "{{ searchQuery }}"</h2>
+    </div>
+
+    <div *ngIf="!noResultsFound" class="container mx-auto px-4 py-10 grid md:grid-cols-2 lg:grid-cols-2 lg:justify-items-center gap-6">
+        
+        <div *ngFor="let item of blogList | slice:0:10; trackBy: trackByFunction" class="bg-white p-4 rounded-lg shadow-md w-full md:w-3/4 lg:w-2/3">
+            <img *ngIf="item.urlToImage" [src]="item.urlToImage" alt="Blog Image" class="rounded-lg">
+            <h3 class="text-xl font-semibold mt-4">{{ item.title }}</h3>
+            <p class="text-gray-600 mt-2">{{ getTwoSentences(item.description)}}</p>
+            <button (click)="NavigateToBlog(item.url)" class="cursor-pointer mt-3 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                Read More
+            </button>
+        </div>
+
+    </div>
+    <footer class="bg-gray-900 text-white text-center p-4 mt-auto ">
+        <p>&copy; 2025 Sarvagna's Blog. All rights reserved.</p>
+    </footer>
+    
+</div>
