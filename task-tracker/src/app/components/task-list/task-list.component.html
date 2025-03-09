@@ -1,0 +1,32 @@
+<div class="flex justify-between items-center mb-4">
+  <!-- ✅ Search Bar (Ensuring it's only displayed once) -->
+  <app-search></app-search>
+</div>
+
+<!-- ✅ Add Task Input -->
+<div class="flex gap-2 mb-4">
+  <input type="text" [(ngModel)]="newTaskTitle" placeholder="Enter task name..."
+    class="border p-2 rounded w-full" />
+  
+  <input type="date" [(ngModel)]="newTaskDueDate" class="border p-2" />
+
+  <label>
+    <input type="checkbox" [(ngModel)]="newTaskImportant" /> Important
+  </label>
+
+  <button (click)="addTask()"
+    class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+    + Add Task
+  </button>
+</div>
+
+<!-- ✅ Show Important Tasks Button -->
+<button (click)="toggleImportantTasks()"
+  class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+  {{ showImportantTasks ? "Show All Tasks" : "Show Important Tasks" }}
+</button>
+
+<!-- ✅ Task List -->
+<div *ngFor="let task of (showImportantTasks ? importantTasks : tasks)">
+  <app-task-item [task]="task"></app-task-item>
+</div>

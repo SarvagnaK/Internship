@@ -1,0 +1,7 @@
+<div class="p-4 flex gap-2">
+    <input type="text" [(ngModel)]="title" placeholder="New Task" class="border p-2" />
+    <input type="date" [(ngModel)]="dueDate" class="border p-2" />
+    <label><input type="checkbox" [(ngModel)]="important" /> Important</label>
+    <button (click)="addTask()" class="bg-green-500 text-white px-4 rounded">Add</button>
+  </div>
+  
