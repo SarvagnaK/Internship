@@ -1,28 +1,32 @@
-<div class="flex justify-between p-2 border rounded-lg shadow-md bg-white">
-  <div class="flex items-center">
-    <!-- Checkbox for marking as completed -->
-    <input type="checkbox" [checked]="task.completed" (change)="toggleComplete()" class="mr-2" />
-    <span 
-      [class.line-through]="task.completed" 
-      [class.text-red-500]="task.important" 
-      class="text-lg font-semibold"
-    >
-      {{ task.title }} - {{ task.dueDate || 'No Due Date' }}
-    </span>
-  </div>
-
-  <div class="flex space-x-2">
-    <!-- Button for marking important -->
-    <button (click)="toggleImportant()" 
-      [class.text-yellow-500]="task.important"
-      class="text-gray-400 hover:text-yellow-500 transition"
-    >
-      ★
-    </button>
-
-    <!-- Delete Task Button -->
-    <button (click)="deleteTask()" class="bg-red-500 text-white px-2 rounded hover:bg-red-700 transition">
-      X
-    </button>
+<div class="flex justify-center items-center">
+  <div class="flex  justify-between m-2 p-2 border w-[500px] shadow-md bg-white">
+    <div class="flex items-center ">
+      <!-- Checkbox for marking as completed -->
+      <input type="checkbox" [checked]="task.completed" (change)="toggleComplete()" class="mr-2" />
+      <span 
+        [class.line-through]="task.completed" 
+        [class.text-red-500]="task.important" 
+        class="text-lg font-semibold m-1"
+      >
+        {{ task.title }} - {{ task.dueDate || 'No Due Date' }}
+      </span>
+    </div>
+  
+    <div class="flex space-x-2">
+      <!-- Button for marking important -->
+      <button (click)="toggleImportant()" 
+        [class.text-yellow-500]="task.important"
+        class="text-gray-400 hover:text-yellow-500 transition"
+      >
+        ★
+      </button>
+  
+      <!-- Delete Task Button -->
+      <button (click)="deleteTask()" class="bg-red-500 text-white px-2 rounded hover:bg-red-700 transition">
+        X
+      </button>
+    </div>
   </div>
 </div>
+
+

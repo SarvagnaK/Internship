@@ -11,7 +11,7 @@
   <input type="date" [(ngModel)]="newTaskDueDate" class="border p-2" />
 
   <label>
-    <input type="checkbox" [(ngModel)]="newTaskImportant" /> Important
+    <input type="checkbox" [(ngModel)]="newTaskImportant"  /> Important
   </label>
 
   <button (click)="addTask()"
@@ -21,10 +21,13 @@
 </div>
 
 <!-- ✅ Show Important Tasks Button -->
-<button (click)="toggleImportantTasks()"
-  class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+ <div class="flex justify-center mb-4">
+  <button (click)="toggleImportantTasks()"
+  class="bg-blue-500 text-white px-4 py-2 m-1 align-middle rounded hover:bg-blue-700 transition">
   {{ showImportantTasks ? "Show All Tasks" : "Show Important Tasks" }}
 </button>
+ </div>
+
 
 <!-- ✅ Task List -->
 <div *ngFor="let task of (showImportantTasks ? importantTasks : tasks)">
