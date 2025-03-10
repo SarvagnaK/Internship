@@ -17,11 +17,13 @@ export class TaskItemComponent {
   constructor(private taskService: TaskService) {}
 
   toggleComplete() {
-    this.taskService.updateTask({ ...this.task, important: !this.task.important });
+    this.task.completed = !this.task.completed; 
+    this.taskService.updateTask(this.task);
   }
 
   toggleImportant() {
-    this.taskService.updateTask({ ...this.task, important: !this.task.important });
+    this.task.important=!this.task.important;
+    this.taskService.updateTask(this.task);
   }
 
   deleteTask() {
